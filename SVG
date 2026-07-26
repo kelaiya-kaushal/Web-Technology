@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SVG Transformations</title>
+</head>
+<body>
+
+<h2>SVG Transformations</h2>
+
+<!-- ================= Translation ================= -->
+<h3>1. Translation</h3>
+<!-- Formula:
+     New X = Old X + tx
+     New Y = Old Y + ty
+-->
+<svg width="300" height="150">
+    <!-- Original Rectangle -->
+    <rect x="20" y="20" width="50" height="50"
+          fill="red"/>
+
+    <!-- Moved Rectangle -->
+    <rect x="20" y="20" width="50" height="50"
+          fill="blue"
+          transform="translate(80,50)"/>
+</svg>
+
+<p>
+Old Position = (20,20)<br>
+translate(80,50)<br>
+New Position = (20+80, 20+50) = <b>(100,70)</b>
+</p>
+
+<hr>
+
+<!-- ================= Rotation ================= -->
+<h3>2. Rotation</h3>
+<!-- Syntax:
+     rotate(angle,cx,cy)
+
+     angle = Rotation angle
+     cx,cy = Pivot point
+-->
+<svg width="300" height="200">
+
+    <!-- Original -->
+    <rect x="100" y="50"
+          width="60" height="60"
+          fill="red"/>
+
+    <!-- Rotated -->
+    <rect x="100" y="50"
+          width="60" height="60"
+          fill="blue"
+          transform="rotate(-30,100,50)"/>
+
+</svg>
+
+<p>
+Rotates the rectangle <b>45°</b> around point <b>(100,50)</b>.
+</p>
+
+<hr>
+
+<!-- ================= Scaling ================= -->
+<h3>3. Scaling</h3>
+
+<!-- Formula
+
+New X = Old X × sx
+New Y = Old Y × sy
+
+New Width = Width × sx
+New Height = Height × sy
+-->
+
+<svg width="350" height="250">
+
+    <!-- Original -->
+    <rect x="20" y="20"
+          width="50" height="50"
+          fill="red"/>
+
+    <!-- Scaled -->
+    <rect x="20" y="20"
+          width="50" height="50"
+          fill="blue"
+          transform="scale(2,3)"/>
+
+</svg>
+
+<p>
+Scale(2,2)<br>
+
+New Width = 50 × 2 = 100<br>
+
+New Height = 50 × 2 = 100
+</p>
+
+<hr>
+
+<!-- ================= SkewX ================= -->
+<h3>4. SkewX</h3>
+
+<!-- Syntax:
+     skewX(angle)
+
+Effect:
+Object slants horizontally.
+-->
+
+<svg width="350" height="200">
+
+    <!-- Original -->
+    <rect x="30" y="40"
+          width="70" height="60"
+          fill="red"/>
+
+    <!-- SkewX -->
+    <rect x="30" y="40"
+          width="70" height="60"
+          fill="blue"
+          transform="skewX(30)"/>
+
+</svg>
+
+<p>
+The rectangle is tilted by <b>30°</b> along the X-axis.
+</p>
+
+<hr>
+
+<!-- ================= SkewY ================= -->
+<h3>5. SkewY</h3>
+
+<!-- Syntax:
+     skewY(angle)
+
+Effect:
+Object slants vertically.
+-->
+
+<svg width="350" height="200">
+
+    <!-- Original -->
+    <rect x="30" y="40"
+          width="70" height="60"
+          fill="red"/>
+
+    <!-- SkewY -->
+    <rect x="30" y="40"
+          width="70" height="60"
+          fill="blue"
+          transform="skewY(30)"/>
+
+</svg>
+
+<p>
+The rectangle is tilted by <b>30°</b> along the Y-axis.
+</p>
+
+</body>
+</html>
