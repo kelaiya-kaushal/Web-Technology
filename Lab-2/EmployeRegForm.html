@@ -1,0 +1,184 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Employee Registration Form</title>
+  </head>
+
+  <body>
+    <h1>Employee Registration Form</h1>
+
+    <form action="welcome.html">
+      <fieldset>
+        <legend>Employee Personal Information</legend>
+
+        <label>Employee Full Name:</label>
+        <input type="text" required />
+        <br />
+        <br />
+
+        <label>Email:</label>
+        <input type="email" required />
+        <br />
+        <br />
+
+        <label>Password:</label>
+        <input type="password" required />
+        <br />
+        <br />
+
+        <label>Phone Number:</label>
+        <input type="tel" />
+        <br />
+        <br />
+
+        <label>Age:</label>
+        <input type="number" />
+        <br />
+        <br />
+
+        <label>Gender:</label>
+        <input type="radio" name="gender" />
+        <label>Male</label>
+
+        <input type="radio" name="gender" />
+        <label>Female</label>
+
+        <br />
+        <br />
+
+        <label>Employee ID:</label>
+        <input type="text" />
+        <br />
+        <br />
+      </fieldset>
+
+      <fieldset>
+        <legend>Employee Professional Information</legend>
+
+        <label>Upload Employee Photo:</label>
+        <input type="file" />
+        <br />
+        <br />
+
+        <label>Department:</label>
+        <select>
+          <optgroup label="Technical">
+            <option>Computer Engineering</option>
+            <option>Software Development</option>
+            <option>IT</option>
+            <option>Cyber Security</option>
+          </optgroup>
+
+          <optgroup label="Non-Technical">
+            <option>HR</option>
+            <option>Finance</option>
+            <option>Marketing</option>
+            <option>Management</option>
+          </optgroup>
+        </select>
+
+        <br />
+        <br />
+
+        <label>Job Position:</label>
+        <input type="search" />
+        <br />
+        <br />
+
+        <label>Experience:</label>
+        <input type="range" />
+        <br />
+        <br />
+
+        <label>Personal Website:</label>
+        <input type="url" />
+        <br />
+        <br />
+
+        <label>Preferred Work Location:</label>
+        <input list="locations" />
+
+        <datalist id="locations">
+          <option>Rajkot</option>
+          <option>Ahmedabad</option>
+          <option>Gandhinagar</option>
+        </datalist>
+
+        <br />
+        <br />
+
+        <label>Employee ID Color:</label>
+        <input type="color" />
+
+        <br />
+        <br />
+
+        <label>Agree to Company Policy:</label>
+        <input type="checkbox" />
+        <label>I agree</label>
+      </fieldset>
+
+      <fieldset>
+        <legend>Joining Date & Time Information</legend>
+
+        <label>Date of Joining:</label>
+        <input type="date" />
+        <br />
+        <br />
+
+        <label>Joining Time:</label>
+        <input type="time" />
+        <br />
+        <br />
+
+        <label>Joining Month:</label>
+        <input type="month" />
+        <br />
+        <br />
+
+        <label>Joining Week:</label>
+        <input type="week" />
+        <br />
+        <br />
+
+        <label>Joining Date and Time:</label>
+        <input type="datetime-local" />
+        <br />
+        <br />
+      </fieldset>
+
+      <fieldset>
+        <legend>Form Controls</legend>
+
+        <button onclick="sub()">Click Me</button>
+
+        <input
+          type="image"
+          src="butterfly.png"
+          alt="Register Employee"
+          height="50"
+          width="50"
+        />
+
+        <br />
+        <br />
+
+        <input type="submit" />
+        <br />
+        <br />
+
+        <input type="reset" />
+        <br />
+        <br />
+      </fieldset>
+    </form>
+
+    <script>
+      function sub() {
+
+      }
+    </script>
+  </body>
+</html>
