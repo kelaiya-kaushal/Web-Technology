@@ -1,0 +1,183 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Placement Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+
+<div class="dashboard">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <h2><i class="fa-solid fa-graduation-cap"></i> PlacePro</h2>
+
+        <p class="menu-title">MAIN MENU</p>
+
+        <a href="#" class="active"><i class="fa-solid fa-house"></i> Dashboard</a>
+        <a href="#"><i class="fa-solid fa-briefcase"></i> Jobs</a>
+        <a href="#"><i class="fa-solid fa-building"></i> Companies</a>
+        <a href="#"><i class="fa-solid fa-file-lines"></i> Applications</a>
+        <a href="#"><i class="fa-solid fa-calendar"></i> Interviews</a>
+        <a href="#"><i class="fa-solid fa-chart-pie"></i> Reports</a>
+
+        <p class="menu-title">ACCOUNT</p>
+
+        <a href="#"><i class="fa-solid fa-user"></i> Profile</a>
+        <a href="#"><i class="fa-solid fa-gear"></i> Settings</a>
+        <a href="#"><i class="fa-solid fa-right-from-bracket"></i> Logout</a>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- Header -->
+        <header>
+            <div>
+                <h1>Dashboard Overview</h1>
+                <p>Welcome back! Here's your placement summary.</p>
+            </div>
+
+            <div class="profile">
+                <i class="fa-regular fa-bell"></i>
+                <img src="https://i.pravatar.cc/100"
+                alt="Profile">
+                <span>Admin</span>
+            </div>
+        </header>
+
+        <!-- Statistics -->
+        <section class="stats">
+
+            <div class="card blue">
+                <div class="card-icon">
+                    <i class="fa-solid fa-users"></i>
+                </div>
+                <h2>1,250</h2>
+                <p>Total Students</p>
+                <small>Registered students</small>
+            </div>
+
+            <div class="card purple">
+                <div class="card-icon">
+                    <i class="fa-solid fa-building"></i>
+                </div>
+                <h2>48</h2>
+                <p>Companies</p>
+                <small>Recruiting partners</small>
+            </div>
+
+            <div class="card green">
+                <div class="card-icon">
+                    <i class="fa-solid fa-user-check"></i>
+                </div>
+                <h2>320</h2>
+                <p>Placed Students</p>
+                <small>Successfully placed</small>
+            </div>
+
+            <div class="card orange">
+                <div class="card-icon">
+                    <i class="fa-solid fa-chart-line"></i>
+                </div>
+                <h2>85%</h2>
+                <p>Placement Rate</p>
+                <small>Overall performance</small>
+            </div>
+
+        </section>
+
+        <!-- Middle Section -->
+        <section class="content-grid">
+
+            <div class="panel">
+                <h3>Placement Statistics</h3>
+                <p>Student placement performance</p>
+
+                <div class="chart">
+                    <div class="bar" style="height:45%">
+                        <span>2022</span>
+                    </div>
+                    <div class="bar" style="height:60%">
+                        <span>2023</span>
+                    </div>
+                    <div class="bar" style="height:72%">
+                        <span>2024</span>
+                    </div>
+                    <div class="bar" style="height:88%">
+                        <span>2025</span>
+                    </div>
+                    <div class="bar" style="height:100%">
+                        <span>2026</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="panel">
+                <h3>Quick Actions</h3>
+                <p>Manage placement activities</p>
+
+                <button><i class="fa-solid fa-plus"></i> Add Company</button>
+                <button><i class="fa-solid fa-user-plus"></i> Add Student</button>
+                <button><i class="fa-solid fa-briefcase"></i> Post New Job</button>
+                <button><i class="fa-solid fa-file-export"></i> Generate Report</button>
+            </div>
+
+        </section>
+
+        <!-- Recent Applications -->
+        <section class="panel applications">
+            <h3>Recent Applications</h3>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Student</th>
+                        <th>Company</th>
+                        <th>Position</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td>Rahul Patel</td>
+                        <td>Google</td>
+                        <td>Software Engineer</td>
+                        <td><span class="status selected">Selected</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>Priya Shah</td>
+                        <td>TCS</td>
+                        <td>Developer</td>
+                        <td><span class="status interview">Interview</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>Amit Joshi</td>
+                        <td>Infosys</td>
+                        <td>System Engineer</td>
+                        <td><span class="status pending">Pending</span></td>
+                    </tr>
+
+                    <tr>
+                        <td>Neha Patel</td>
+                        <td>Wipro</td>
+                        <td>Web Developer</td>
+                        <td><span class="status selected">Selected</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+    </main>
+</div>
+
+</body>
+</html>
