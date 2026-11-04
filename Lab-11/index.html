@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lab 11 - Tailwind Header with Dropdown</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: '#2563eb',
+            deep: '#0f172a'
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    body { font-family: Arial, sans-serif; }
+  </style>
+</head>
+<body class="bg-slate-100">
+  <header class="bg-deep text-white shadow-lg">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-full bg-brand flex items-center justify-center font-bold">C</div>
+          <span class="text-2xl font-bold">CampusHub</span>
+        </div>
+
+        <nav class="hidden md:flex items-center space-x-8">
+          <a href="#" class="hover:text-blue-300 transition">Home</a>
+          <a href="#" class="hover:text-blue-300 transition">About</a>
+
+          <div class="relative group">
+            <button class="flex items-center gap-1 hover:text-blue-300 transition focus:outline-none">
+              Academics
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" /></svg>
+            </button>
+            <div class="absolute left-0 mt-2 w-56 rounded-md bg-white text-slate-800 shadow-xl opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 pointer-events-none group-hover:pointer-events-auto group-focus-within:pointer-events-auto transition duration-200">
+              <a href="#" class="block px-4 py-3 hover:bg-slate-100">Courses</a>
+              <a href="#" class="block px-4 py-3 hover:bg-slate-100">Departments</a>
+              <a href="#" class="block px-4 py-3 hover:bg-slate-100">Research</a>
+            </div>
+          </div>
+
+          <div class="relative group">
+            <button class="flex items-center gap-1 hover:text-blue-300 transition focus:outline-none">
+              Admissions
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" /></svg>
+            </button>
+            <div class="absolute left-0 mt-2 w-56 rounded-md bg-white text-slate-800 shadow-xl opacity-0 group-hover:opacity-100 group-focus-within:opacity-100 pointer-events-none group-hover:pointer-events-auto group-focus-within:pointer-events-auto transition duration-200">
+              <a href="#" class="block px-4 py-3 hover:bg-slate-100">Apply Online</a>
+              <a href="#" class="block px-4 py-3 hover:bg-slate-100">Scholarships</a>
+              <a href="#" class="block px-4 py-3 hover:bg-slate-100">Eligibility</a>
+            </div>
+          </div>
+
+          <a href="#" class="hover:text-blue-300 transition">Placements</a>
+          <a href="#" class="hover:text-blue-300 transition">Contact</a>
+        </nav>
+
+        <button class="bg-brand px-4 py-2 rounded-full font-semibold hover:bg-blue-500 transition">Apply Now</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-4 py-16">
+    <div class="bg-white rounded-3xl shadow-lg p-8 md:p-12">
+      <p class="text-sm uppercase tracking-[0.3em] text-blue-600 font-semibold">Welcome</p>
+      <h1 class="mt-4 text-4xl md:text-5xl font-bold text-slate-800">A campus experience built for growth</h1>
+      <p class="mt-4 max-w-2xl text-slate-600 text-lg">Explore academic programs, student life, placement opportunities, and world-class infrastructure designed for future-ready professionals.</p>
+      <div class="mt-8 flex flex-wrap gap-4">
+        <button class="bg-brand text-white px-6 py-3 rounded-full font-medium">Explore Programs</button>
+        <button class="bg-slate-200 px-6 py-3 rounded-full font-medium text-slate-700">Know More</button>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

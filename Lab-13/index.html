@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lab 13 - Student Registration Form</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #eef2ff, #f8fafc);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 25px;
+    }
+    .form-box {
+      width: min(850px, 100%);
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.12);
+      padding: 30px;
+    }
+    h2 {
+      text-align: center;
+      color: #1d4ed8;
+      margin-bottom: 25px;
+    }
+    .row {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(240px, 1fr));
+      gap: 18px;
+    }
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+    label {
+      font-weight: 600;
+      color: #1f2937;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid #cbd5e1;
+      border-radius: 10px;
+      font-size: 1rem;
+      outline: none;
+    }
+    input:focus, select:focus, textarea:focus {
+      border-color: #3b82f6;
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.18);
+    }
+    .error {
+      color: #dc2626;
+      font-size: 0.85rem;
+      min-height: 18px;
+    }
+    .submit-btn {
+      display: block;
+      width: 100%;
+      background: linear-gradient(135deg, #2563eb, #7c3aed);
+      border: none;
+      color: white;
+      padding: 14px 20px;
+      border-radius: 12px;
+      font-size: 1rem;
+      font-weight: 700;
+      cursor: pointer;
+      margin-top: 20px;
+    }
+    @media (max-width: 640px) {
+      .row {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="form-box">
+    <h2>Student Registration Form</h2>
+    <form id="studentForm" novalidate>
+      <div class="row">
+        <div class="field">
+          <label for="enrollment">Enrollment Number</label>
+          <input type="text" id="enrollment" placeholder="e.g. 210170107001" />
+          <div class="error" id="enrollmentError"></div>
+        </div>
+        <div class="field">
+          <label for="name">Name</label>
+          <input type="text" id="name" placeholder="Enter full name" />
+          <div class="error" id="nameError"></div>
+        </div>
+        <div class="field">
+          <label for="email">Email ID</label>
+          <input type="email" id="email" placeholder="name@example.com" />
+          <div class="error" id="emailError"></div>
+        </div>
+        <div class="field">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" placeholder="10-digit phone number" />
+          <div class="error" id="phoneError"></div>
+        </div>
+        <div class="field">
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="Create password" />
+          <div class="error" id="passwordError"></div>
+        </div>
+        <div class="field">
+          <label for="confirmPassword">Confirm Password</label>
+          <input type="password" id="confirmPassword" placeholder="Re-enter password" />
+          <div class="error" id="confirmPasswordError"></div>
+        </div>
+        <div class="field" style="grid-column: 1 / -1;">
+          <label for="address">Address</label>
+          <textarea id="address" rows="3" placeholder="Enter your residential address"></textarea>
+          <div class="error" id="addressError"></div>
+        </div>
+        <div class="field">
+          <label for="gender">Gender</label>
+          <select id="gender">
+            <option value="">Select gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+          </select>
+          <div class="error" id="genderError"></div>
+        </div>
+        <div class="field">
+          <label for="branch">Choice of Branch</label>
+          <select id="branch">
+            <option value="">Select branch</option>
+            <option value="Computer Engineering">Computer Engineering</option>
+            <option value="Civil Engineering">Civil Engineering</option>
+            <option value="Mechanical Engineering">Mechanical Engineering</option>
+            <option value="Electrical Engineering">Electrical Engineering</option>
+          </select>
+          <div class="error" id="branchError"></div>
+        </div>
+      </div>
+
+      <button type="submit" class="submit-btn">Register</button>
+    </form>
+  </div>
+
+  <script>
+    const studentForm = document.getElementById('studentForm');
+
+    function setError(id, message) {
+      document.getElementById(id).textContent = message;
+    }
+
+    function validateForm() {
+      let isValid = true;
+
+      const enrollment = document.getElementById('enrollment').value.trim();
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const password = document.getElementById('password').value.trim();
+      const confirmPassword = document.getElementById('confirmPassword').value.trim();
+      const address = document.getElementById('address').value.trim();
+      const gender = document.getElementById('gender').value;
+      const branch = document.getElementById('branch').value;
+
+      setError('enrollmentError', '');
+      setError('nameError', '');
+      setError('emailError', '');
+      setError('phoneError', '');
+      setError('passwordError', '');
+      setError('confirmPasswordError', '');
+      setError('addressError', '');
+      setError('genderError', '');
+      setError('branchError', '');
+
+      if (!enrollment || !/^\d{12}$/.test(enrollment)) {
+        setError('enrollmentError', 'Enter a valid 12-digit enrollment number.');
+        isValid = false;
+      }
+
+      if (!name || name.length < 3) {
+        setError('nameError', 'Name must contain at least 3 characters.');
+        isValid = false;
+      }
+
+      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        setError('emailError', 'Enter a valid email address.');
+        isValid = false;
+      }
+
+      if (!phone || !/^\d{10}$/.test(phone)) {
+        setError('phoneError', 'Phone number must contain exactly 10 digits.');
+        isValid = false;
+      }
+
+      if (!password || password.length < 6) {
+        setError('passwordError', 'Password must be at least 6 characters long.');
+        isValid = false;
+      }
+
+      if (!confirmPassword || confirmPassword !== password) {
+        setError('confirmPasswordError', 'Passwords do not match.');
+        isValid = false;
+      }
+
+      if (!address || address.length < 10) {
+        setError('addressError', 'Address must be at least 10 characters long.');
+        isValid = false;
+      }
+
+      if (!gender) {
+        setError('genderError', 'Please select your gender.');
+        isValid = false;
+      }
+
+      if (!branch) {
+        setError('branchError', 'Please select a branch.');
+        isValid = false;
+      }
+
+      return isValid;
+    }
+
+    studentForm.addEventListener('submit', function (event) {
+      event.preventDefault();
+      if (validateForm()) {
+        alert('Registration successful!');
+        studentForm.reset();
+      }
+    });
+  </script>
+</body>
+</html>

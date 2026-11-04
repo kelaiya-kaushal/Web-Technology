@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lab 6 - Loader, Gallery, Flex</title>
+  <style>
+    :root {
+      --primary: #4f46e5;
+      --secondary: #ec4899;
+      --dark: #1f2937;
+      --light: #f8fafc;
+      --card: #ffffff;
+      --shadow: 0 12px 28px rgba(15, 23, 42, 0.15);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #eef2ff, #fdf2f8);
+      color: var(--dark);
+    }
+
+    .container {
+      width: min(1100px, 90%);
+      margin: 0 auto;
+      padding: 40px 0 70px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: clamp(2rem, 3vw, 2.7rem);
+      color: var(--dark);
+    }
+
+    .loader-box,
+    .gallery-box,
+    .flex-box {
+      background: var(--card);
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+      padding: 30px 20px;
+      margin-bottom: 35px;
+    }
+
+    .loader {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      height: 120px;
+    }
+
+    .loader span {
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      animation: bounce 0.9s ease-in-out infinite alternate;
+    }
+
+    .loader span:nth-child(2) { animation-delay: 0.2s; }
+    .loader span:nth-child(3) { animation-delay: 0.4s; }
+    .loader span:nth-child(4) { animation-delay: 0.6s; }
+    .loader span:nth-child(5) { animation-delay: 0.8s; }
+
+    @keyframes bounce {
+      0% { transform: translateY(0) scale(0.8); opacity: 0.7; }
+      50% { transform: translateY(-25px) scale(1.1); opacity: 1; }
+      100% { transform: translateY(0) scale(0.8); opacity: 0.7; }
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .gallery-item {
+      flex: 1 1 220px;
+      max-width: 280px;
+      background: #f8fafc;
+      border-radius: 18px;
+      overflow: hidden;
+      transition: transform 0.3s ease;
+      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);
+    }
+
+    .gallery-item:hover {
+      transform: translateY(-6px);
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .gallery-item p {
+      margin: 0;
+      padding: 14px 12px;
+      text-align: center;
+      font-weight: 600;
+    }
+
+    .flex-demo {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      justify-content: center;
+      align-items: stretch;
+    }
+
+    .flex-item {
+      flex: 1 1 180px;
+      min-height: 120px;
+      padding: 20px;
+      border-radius: 16px;
+      font-weight: 700;
+      color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    .one { background: #2563eb; order: 3; }
+    .two { background: #10b981; flex: 2 1 220px; order: 1; }
+    .three { background: #f59e0b; order: 2; }
+    .four { background: #ef4444; order: 4; }
+
+    .notes {
+      margin-top: 18px;
+      text-align: center;
+      color: #475569;
+      font-size: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Bouncing Loader + Flex Gallery</h2>
+
+    <section class="loader-box">
+      <div class="loader" aria-label="Loading">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </section>
+
+    <section class="gallery-box">
+      <div class="gallery">
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=800&q=80" alt="Nature" />
+          <p>Nature</p>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1493246507139-91e8fad9978e?auto=format&fit=crop&w=800&q=80" alt="Mountain" />
+          <p>Mountain</p>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1517849845537-4d257902454a?auto=format&fit=crop&w=800&q=80" alt="Dog" />
+          <p>Pet</p>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?auto=format&fit=crop&w=800&q=80" alt="Team" />
+          <p>Team</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="flex-box">
+      <div class="flex-demo">
+        <div class="flex-item one">Item 1</div>
+        <div class="flex-item two">Item 2</div>
+        <div class="flex-item three">Item 3</div>
+        <div class="flex-item four">Item 4</div>
+      </div>
+      <p class="notes">This layout demonstrates flex-direction, order, and grow/shrink properties on flex items.</p>
+    </section>
+  </div>
+</body>
+</html>

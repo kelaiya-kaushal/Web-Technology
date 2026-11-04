@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lab 10 - Tailwind Product Page</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-100 text-slate-800">
+  <header class="bg-white shadow-sm">
+    <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 flex items-center justify-between">
+      <div class="flex items-center space-x-3">
+        <div class="w-10 h-10 bg-gradient-to-br from-indigo-500 to-pink-500 rounded-full flex items-center justify-center text-white font-bold">S</div>
+        <span class="text-xl font-bold">ShopSphere</span>
+      </div>
+      <div class="hidden md:flex items-center space-x-8 text-sm font-medium">
+        <a href="#" class="hover:text-indigo-600">Home</a>
+        <a href="#" class="hover:text-indigo-600">Categories</a>
+        <a href="#" class="hover:text-indigo-600">Deals</a>
+        <a href="#" class="hover:text-indigo-600">New Arrivals</a>
+      </div>
+      <button class="bg-indigo-600 text-white px-4 py-2 rounded-full hover:bg-indigo-700">Shop Now</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="max-w-7xl mx-auto px-4 py-12 grid md:grid-cols-2 gap-10 items-center">
+      <div>
+        <p class="text-indigo-600 font-semibold uppercase tracking-[0.18em] text-xs">Trending Collection</p>
+        <h1 class="mt-4 text-4xl sm:text-5xl font-extrabold leading-tight">Smart essentials for modern living</h1>
+        <p class="mt-4 text-lg text-slate-600">Upgrade your lifestyle with premium gadgets and accessories designed for comfort, performance, and style.</p>
+        <div class="mt-8 flex flex-wrap gap-4">
+          <button class="bg-indigo-600 text-white px-6 py-3 rounded-full hover:bg-indigo-700">Buy Now</button>
+          <button class="border border-slate-300 bg-white px-6 py-3 rounded-full hover:border-indigo-500 hover:text-indigo-600">View Catalog</button>
+        </div>
+      </div>
+      <div class="relative">
+        <div class="bg-gradient-to-br from-indigo-100 via-white to-pink-100 p-8 rounded-3xl shadow-xl">
+          <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=900&q=80" alt="Smart watch" class="w-full h-[420px] object-cover rounded-2xl" />
+        </div>
+      </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-4 pb-5">
+      <div class="flex flex-wrap gap-3 mb-8">
+        <span class="bg-white border border-slate-200 rounded-full px-4 py-2 text-sm font-medium">Mobiles</span>
+        <span class="bg-white border border-slate-200 rounded-full px-4 py-2 text-sm font-medium">Laptops</span>
+        <span class="bg-white border border-slate-200 rounded-full px-4 py-2 text-sm font-medium">Audio</span>
+        <span class="bg-white border border-slate-200 rounded-full px-4 py-2 text-sm font-medium">Accessories</span>
+        <span class="bg-white border border-slate-200 rounded-full px-4 py-2 text-sm font-medium">Wearables</span>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div class="bg-white rounded-2xl shadow-sm overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=900&q=80" alt="Sneakers" class="h-56 w-full object-cover" />
+          <div class="p-4">
+            <p class="text-sm text-slate-500">Sports</p>
+            <h3 class="mt-1 font-bold text-lg">Urban Runner</h3>
+            <div class="mt-3 flex items-center justify-between">
+              <span class="text-indigo-600 font-bold">₹1,799</span>
+              <button class="bg-slate-900 text-white px-3 py-2 rounded-lg text-sm">Add</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl shadow-sm overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1511497584788-876760111969?auto=format&fit=crop&w=900&q=80" alt="Laptop" class="h-56 w-full object-cover" />
+          <div class="p-4">
+            <p class="text-sm text-slate-500">Laptops</p>
+            <h3 class="mt-1 font-bold text-lg">EchoBook Pro</h3>
+            <div class="mt-3 flex items-center justify-between">
+              <span class="text-indigo-600 font-bold">₹48,999</span>
+              <button class="bg-slate-900 text-white px-3 py-2 rounded-lg text-sm">Add</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl shadow-sm overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?auto=format&fit=crop&w=900&q=80" alt="Headphones" class="h-56 w-full object-cover" />
+          <div class="p-4">
+            <p class="text-sm text-slate-500">Audio</p>
+            <h3 class="mt-1 font-bold text-lg">NoiseX Headset</h3>
+            <div class="mt-3 flex items-center justify-between">
+              <span class="text-indigo-600 font-bold">₹2,999</span>
+              <button class="bg-slate-900 text-white px-3 py-2 rounded-lg text-sm">Add</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl shadow-sm overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=900&q=80" alt="Earbuds" class="h-56 w-full object-cover" />
+          <div class="p-4">
+            <p class="text-sm text-slate-500">Accessories</p>
+            <h3 class="mt-1 font-bold text-lg">BassBeat Pro</h3>
+            <div class="mt-3 flex items-center justify-between">
+              <span class="text-indigo-600 font-bold">₹1,499</span>
+              <button class="bg-slate-900 text-white px-3 py-2 rounded-lg text-sm">Add</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="max-w-7xl mx-auto px-4 py-16">
+      <div class="bg-gradient-to-r from-indigo-600 to-pink-500 rounded-3xl text-white p-8 md:p-12 flex flex-col md:flex-row items-center justify-between gap-6">
+        <div>
+          <p class="uppercase tracking-widest text-xs opacity-80">Limited Time Offer</p>
+          <h2 class="mt-3 text-3xl font-bold">Get 30% off on premium gadgets</h2>
+        </div>
+        <button class="bg-white text-indigo-600 font-semibold px-6 py-3 rounded-full">Claim Deal</button>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
